@@ -10,7 +10,15 @@ routes.get("/order", requireAuth, controller.getOrder);
 
 routes.post("/signup", controller.signup);
 
-routes.options("/login", cors());
+routes.options(
+  "/login",
+  cors({
+    origin: true,
+    methods: ["POST"],
+    credentials: true,
+    maxAge: 3600,
+  })
+);
 routes.post("/login", controller.login);
 
 routes.post("/otp-request", controller.otpRequest);
