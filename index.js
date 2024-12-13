@@ -22,9 +22,9 @@ app.use(cookieParser());
 database.connect();
 
 const corsOptions = {
-  origin: "https://e-commerce-website-client-steel.vercel.app",
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type,Authorization",
+  origin: "https://e-commerce-website-client-steel.vercel.app/",
+  methods: "GET, POST, PUT, DELETE, PATCH",
+  allowedHeaders: "Content-Type, Authorization",
 };
 
 app.use(cors(corsOptions));

@@ -5,9 +5,17 @@ const checkoutRoutes = require("./checkout.route");
 const categoryRoutes = require("./category.route");
 const { requireAuth } = require("../../middlewares/client/auth.middleware");
 // const { requireCart } = require("../../middlewares/client/cart.middleware");
+const cors = require("cors");
+
+const corsOptions = {
+  origin: "https://e-commerce-website-client-steel.vercel.app/",
+  methods: "GET, POST, PUT, DELETE, PATCH",
+  allowedHeaders: "Content-Type, Authorization",
+};
 
 module.exports = (app) => {
   const version = "/api/v1";
+  app.use(cors(corsOptions));
 
   app.use(version + "/products", requireAuth, productRoutes);
   app.use(version + "/user", userRoutes);
