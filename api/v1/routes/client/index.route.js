@@ -11,6 +11,8 @@ const corsOptions = {
   origin: "https://e-commerce-website-client-steel.vercel.app",
   methods: "GET,POST,PUT,DELETE,PATCH",
   allowedHeaders: "Content-Type,Authorization",
+  preflightContinue: true,
+  optionsSuccessStatus: 204,
 };
 
 module.exports = (app) => {
@@ -23,5 +25,4 @@ module.exports = (app) => {
   app.use(version + "/cart", requireAuth, cartRoutes);
   app.use(version + "/checkout", requireAuth, checkoutRoutes);
   app.use(version + "/category", requireAuth, categoryRoutes);
-
-}
+};
