@@ -8,9 +8,9 @@ const { requireAuth } = require("../../middlewares/client/auth.middleware");
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "https://e-commerce-website-client-steel.vercel.app/",
-  methods: "GET, POST, PUT, DELETE, PATCH",
-  allowedHeaders: "Content-Type, Authorization",
+  origin: "https://e-commerce-website-client-steel.vercel.app",
+  methods: "GET,POST,PUT,DELETE,PATCH",
+  allowedHeaders: "Content-Type,Authorization",
 };
 
 module.exports = (app) => {
