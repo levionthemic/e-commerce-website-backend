@@ -16,6 +16,7 @@ const corsOptions = {
 module.exports = (app) => {
   const version = "/api/v1";
   app.use(cors(corsOptions));
+  app.options("*", cors());
 
   app.use(version + "/products", requireAuth, productRoutes);
   app.use(version + "/user", userRoutes);
